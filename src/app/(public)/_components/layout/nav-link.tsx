@@ -17,7 +17,9 @@ export default function NavLink({ href, name }: NavLinkProps) {
         pathname === href ? 'text-secondary' : ''
       )}
     >
-      <Link href={href}>{name}</Link>
+      <Link href={href} aria-current={pathname === href ? 'page' : undefined}>
+        {name}
+      </Link>
     </li>
   );
 }
