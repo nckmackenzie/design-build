@@ -37,6 +37,7 @@ const config: Config = {
       fontFamily: {
         headings: ['var(--font-playfair-display)'],
         mono: ['var(--font-geist-mono)'],
+        sans: ['var(--font-geist-sans)'],
       },
     },
   },
