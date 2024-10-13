@@ -20,7 +20,7 @@ export const NAV_LINKS = [
   },
   {
     name: 'contact',
-    href: '/contact',
+    href: '/contact-us',
   },
 ];
 
