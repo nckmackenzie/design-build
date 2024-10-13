@@ -43,6 +43,26 @@ const playFairDisplay = localFont({
   variable: '--font-playfair-display',
   // weight: '100 900',
 });
+// const montserrat = localFont({
+//   src: [
+//     {
+//       path: './fonts/montserrat/Montserrat-Light.woff',
+//       style: 'normal',
+//       weight: '300',
+//     },
+//     {
+//       path: './fonts/montserrat/Montserrat-LightItalic.woff',
+//       style: 'italic',
+//       weight: '300',
+//     },
+//     {
+//       path: './fonts/montserrat/Montserrat-Regular.woff',
+//       style: 'normal',
+//       weight: '400',
+//     },
+//   ],
+//   variable: '--font-montserrat',
+// });
 
 export const metadata: Metadata = {
   title: {
@@ -60,7 +80,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} ${playFairDisplay.variable} antialiased`}
+        className={`${geistSans.variable} ${geistMono.variable} ${playFairDisplay.variable}  antialiased`}
       >
         {children}
       </body>
