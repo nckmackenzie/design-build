@@ -194,11 +194,11 @@ function Process({ description, imagePath, title, index }: ProcessProps) {
   return (
     <div
       className={cn(
-        'flex flex-col md:flex-row gap-4 md:gap-6 container',
+        'flex flex-col md:flex-row gap-4 md:gap-6 container justify-between',
         index % 2 === 0 ? 'md:flex-row-reverse' : ''
       )}
     >
-      <div className="space-y-6 self-center">
+      <div className="space-y-6">
         <div
           className="text-7xl font-black font-sans text-gray-100"
           aria-hidden="true"
@@ -209,7 +209,7 @@ function Process({ description, imagePath, title, index }: ProcessProps) {
           <h5 className="text-primary text-lg md:text-xl font-semibold">
             {title}
           </h5>
-          <p className="text-sm md:text-lg">{description}</p>
+          <p className="text-sm md:text-lg max-w-lg">{description}</p>
         </div>
       </div>
       <Image
@@ -217,7 +217,8 @@ function Process({ description, imagePath, title, index }: ProcessProps) {
         alt={title}
         width={500}
         height={300}
-        layout="responsive"
+        className="size-72 "
+        // layout="responsive"
       />
     </div>
   );
