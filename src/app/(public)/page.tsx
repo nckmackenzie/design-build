@@ -28,7 +28,7 @@ function Hero() {
         <div className="space-y-6">
           <div>
             <Badge variant="gore" aria-hidden="true">
-              Your Vision, Our Expertise.
+              Your Vision is Our Expertise.
             </Badge>
             <h1 className="text-lg md:text-5xl font-bold text-primary font-headings">
               Complete turnkey construction solution.
