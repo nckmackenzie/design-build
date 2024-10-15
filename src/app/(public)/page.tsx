@@ -12,7 +12,8 @@ import { cn } from '@/lib/utils';
 export default function Home() {
   return (
     <>
-      <Hero />
+      {/* <Hero /> */}
+      <Herov2 />
       <Features />
       <Services />
       <OurProcess />
@@ -21,41 +22,82 @@ export default function Home() {
   );
 }
 
-function Hero() {
+// function Hero() {
+//   return (
+//     <section className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6 container py-6 md:py-12">
+//       <div className="space-y-8 self-center">
+//         <div className="space-y-6">
+//           <div>
+//             <Badge variant="gore" aria-hidden="true">
+//               Your Vision is Our Expertise.
+//             </Badge>
+//             <h1 className="text-lg md:text-5xl font-bold text-primary font-headings">
+//               Complete turnkey construction solution.
+//             </h1>
+//           </div>
+//           <p className="text-foreground text-base md:text-lg">
+//             From design to build to supply, we provide a seamless, end-to-end
+//             solution for all your construction needs. Discover how we bring your
+//             dream project to life with precision, quality, and ease.
+//           </p>
+//         </div>
+//         <div className="space-x-4">
+//           <Button size="lg" variant="gore">
+//             Start your project today
+//           </Button>
+//           <Button size="lg" variant="outline">
+//             Get a free consultation
+//           </Button>
+//         </div>
+//       </div>
+//       <Image
+//         src="/home/hero.jpg"
+//         alt="Construction worker performing a task"
+//         width={1920}
+//         height={1080}
+//         className="rounded-3xl"
+//       />
+//     </section>
+//   );
+// }
+
+function Herov2() {
   return (
-    <section className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6 container py-6 md:py-12">
-      <div className="space-y-8 self-center">
-        <div className="space-y-6">
-          <div>
-            <Badge variant="gore" aria-hidden="true">
-              Your Vision is Our Expertise.
-            </Badge>
-            <h1 className="text-lg md:text-5xl font-bold text-primary font-headings">
-              Complete turnkey construction solution.
-            </h1>
+    <section
+      id="hero"
+      className="relative h-screen bg-hero-pattern bg-cover bg-center grid place-content-center"
+    >
+      <div
+        className="absolute inset-0 bg-black opacity-70"
+        aria-hidden="true"
+      />
+      <div className="h-full text-white max-w-prose">
+        <div className="space-y-8 ">
+          <div className="space-y-6">
+            <div>
+              <Badge variant="default" aria-hidden="true">
+                Your Vision is Our Expertise.
+              </Badge>
+              <h1 className="text-lg md:text-5xl font-bold text-white font-headings">
+                Complete turnkey construction solution.
+              </h1>
+            </div>
+            <p className="text-foreground text-base md:text-lg">
+              From design to build to supply, we provide a seamless, end-to-end
+              solution for all your construction needs. Discover how we bring
+              your dream project to life with precision, quality, and ease.
+            </p>
           </div>
-          <p className="text-foreground text-base md:text-lg">
-            From design to build to supply, we provide a seamless, end-to-end
-            solution for all your construction needs. Discover how we bring your
-            dream project to life with precision, quality, and ease.
-          </p>
-        </div>
-        <div className="space-x-4">
-          <Button size="lg" variant="gore">
-            Start your project today
-          </Button>
-          <Button size="lg" variant="outline">
-            Get a free consultation
-          </Button>
+          <div className="space-x-4">
+            <Button size="lg" variant="gore">
+              Start your project today
+            </Button>
+            <Button size="lg" variant="outline">
+              Get a free consultation
+            </Button>
+          </div>
         </div>
       </div>
-      <Image
-        src="/home/hero.jpg"
-        alt="Construction worker performing a task"
-        width={1920}
-        height={1080}
-        className="rounded-3xl"
-      />
     </section>
   );
 }
@@ -120,13 +162,14 @@ function Services() {
         descripton="Comprehensive Solutions for Every Stage of Your Construction Journey."
         id="our-services-heading"
       />
-      <div className="grid grid-cols-1 sm:grid-cols-2  gap-4 md:gap-6 container items-center">
+      <div className="grid grid-cols-1 sm:grid-cols-4  gap-4 md:gap-6 container items-center">
         {SERVICES.map(service => (
           <Service
             key={service.title}
             header={service.title}
             text={service.description}
             href={service.href}
+            imagePath={service.imagePath}
           />
         ))}
       </div>
@@ -138,27 +181,39 @@ interface ServiceProps {
   header: string;
   text: string;
   href: string;
+  imagePath: string;
 }
 
-function Service({ header, text, href }: ServiceProps) {
+function Service({ header, text, href, imagePath }: ServiceProps) {
   return (
-    <article className="rounded-xl overflow-hidden shadow-xl p-4 bg-white">
-      <header className="text-lg font-semibold text-primary">
-        <h4>{header}</h4>
+    <article className="flex flex-col rounded-xl overflow-hidden shadow-xl bg-white h-full">
+      <header className="p-2">
+        <Image
+          src={imagePath}
+          width={640}
+          height={480}
+          className="rounded-xl object-cover"
+          alt=""
+        />
       </header>
-      <p className="text-fore">{text}</p>
+      <div className="flex flex-col flex-grow p-4">
+        <header className="text-lg font-semibold text-primary mb-4">
+          <h4>{header}</h4>
+        </header>
+        <p className="text-fore flex-grow">{text}</p>
 
-      <footer>
-        <Link href={href}>
-          <Button
-            size="sm"
-            variant="link"
-            className="justify-start px-0 text-primary text-blue-500 space-x-2 "
-          >
-            Learn More &rarr;
-          </Button>
-        </Link>
-      </footer>
+        <footer className="mt-4">
+          <Link href={href}>
+            <Button
+              size="sm"
+              variant="link"
+              className="justify-start px-0 text-primary text-blue-500 space-x-2 "
+            >
+              Learn More &rarr;
+            </Button>
+          </Link>
+        </footer>
+      </div>
     </article>
   );
 }
