@@ -89,31 +89,31 @@ export const FEATURES = [
 
 export const SERVICES = [
   {
-    imagePath: '/home/services_1.jpg',
+    imagePath: '/home/design_architecture.jpg',
     title: 'Design & Architecture',
     description:
       'From concept sketches to detailed architectural plans, we translate your ideas into functional, aesthetically pleasing spaces. Our in-house architects collaborate closely with you to ensure your vision is realized.',
     href: '/services#design-and-architecture',
   },
   {
-    imagePath: '/home/services_2.jpg',
+    imagePath: '/home/construction_management.jpg',
     title: 'Construction Management',
     description:
       'We handle the entire construction process, coordinating every detail from ground-breaking to finishing touches. Our experienced project managers ensure that timelines, budgets, and quality standards are met.',
     href: '/services#construction-management',
   },
   {
-    imagePath: '/home/services_3.jpg',
+    imagePath: '/home/interior_design_installation.jpg',
     title: 'Interior Design & Installation',
     description:
       'Our interior design team takes care of everything, from concept development and 3D renders to the final installation of fixtures, furniture, and decor. We create spaces that reflect your taste, lifestyle, and functional needs.',
     href: '/services#interior-design-and-installation',
   },
   {
-    imagePath: '/home/services_4.jpg',
+    imagePath: '/home/material_sourcing_supply.jpg',
     title: 'Material Sourcing & Supply',
     description:
-      'Our long-standing relationships with reputable suppliers enable us to source premium construction materials at competitive prices. Whether you need raw materials, bespoke fixtures, or high-end finishes, we guarantee quality and reliability.',
+      'Our long-standing relations with reputable suppliers enable us to source premium construction materials at competitive prices. Whether you need raw materials, bespoke fixtures, or high-end finishes, we guarantee quality and reliability.',
     href: '/services#material-sourcing-and-supply',
   },
 ];
