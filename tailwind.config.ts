@@ -42,6 +42,9 @@ const config: Config = {
       aspectRatio: {
         '3/2': '3 / 2',
       },
+      backgroundImage: {
+        'hero-pattern': "url('/home/hero_1.jpeg')",
+      },
     },
   },
   plugins: [],
