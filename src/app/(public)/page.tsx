@@ -8,6 +8,7 @@ import SectionHeader from '@/components/section-header';
 
 import { FEATURES, PROCESS, SERVICES } from '@/lib/constants';
 import { cn } from '@/lib/utils';
+import ProjectCarousel from './_components/home/carousel';
 
 export default function Home() {
   return (
@@ -17,6 +18,7 @@ export default function Home() {
       <Features />
       <Services />
       <OurProcess />
+      <ProjectCarousel />
       <CTA />
     </>
   );
@@ -92,7 +94,7 @@ function Herov2() {
             <Button size="lg" variant="gore">
               Start your project today
             </Button>
-            <Button size="lg" variant="outline" className='border-secondary'>
+            <Button size="lg" variant="outline" className="border-secondary">
               Get a free consultation
             </Button>
           </div>
