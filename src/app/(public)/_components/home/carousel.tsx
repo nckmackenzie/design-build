@@ -4,22 +4,26 @@ import 'react-responsive-carousel/lib/styles/carousel.min.css'; // requires a lo
 import { Carousel } from 'react-responsive-carousel';
 export default function ProjectCarousel() {
   return (
-    <Carousel autoPlay infiniteLoop showThumbs={false}>
-      <div>
-        <img src="/home/carousel_1.jpg" alt="" />
+    <section id="project-carousel" className="bg-slate-100">
+      <div className="container">
+        <Carousel autoPlay infiniteLoop showThumbs={false}>
+          <div>
+            <img src="/home/carousel_1.jpg" alt="" />
+          </div>
+          <div>
+            <img src="/home/carousel_2.jpg" alt="" />
+          </div>
+          <div>
+            <img src="/home/carousel_3.jpg" alt="" />
+          </div>
+          <div>
+            <img src="/home/carousel_4.jpg" alt="" />
+          </div>
+          <div>
+            <img src="/home/carousel_5.jpg" alt="" />
+          </div>
+        </Carousel>
       </div>
-      <div>
-        <img src="/home/carousel_2.jpg" alt="" />
-      </div>
-      <div>
-        <img src="/home/carousel_3.jpg" alt="" />
-      </div>
-      <div>
-        <img src="/home/carousel_4.jpg" alt="" />
-      </div>
-      <div>
-        <img src="/home/carousel_5.jpg" alt="" />
-      </div>
-    </Carousel>
+    </section>
   );
 }
