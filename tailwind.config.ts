@@ -43,7 +43,7 @@ const config: Config = {
         '3/2': '3 / 2',
       },
       backgroundImage: {
-        'hero-pattern': "url('/home/hero_1.jpeg')",
+        'hero-pattern': "url('/home/hero_overlay.jpg')",
       },
     },
   },
