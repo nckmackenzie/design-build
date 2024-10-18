@@ -67,10 +67,10 @@ function Herov2() {
       id="hero"
       className="relative h-screen bg-hero-pattern bg-cover bg-center grid place-content-center"
     >
-      <div
-        className="absolute inset-0 bg-black opacity-70"
+      {/* <div
+        className="absolute inset-0 bg-primary opacity-40"
         aria-hidden="true"
-      />
+      /> */}
       <div className="h-full text-white max-w-prose">
         <div className="space-y-8 ">
           <div className="space-y-6">
@@ -78,7 +78,7 @@ function Herov2() {
               <Badge variant="default" aria-hidden="true">
                 Your Vision is Our Expertise.
               </Badge>
-              <h1 className="text-lg md:text-5xl font-bold text-white font-headings">
+              <h1 className="text-lg md:text-5xl font-bold text-secondary font-headings">
                 Complete turnkey construction solution.
               </h1>
             </div>
@@ -92,7 +92,7 @@ function Herov2() {
             <Button size="lg" variant="gore">
               Start your project today
             </Button>
-            <Button size="lg" variant="outline">
+            <Button size="lg" variant="outline" className='border-secondary'>
               Get a free consultation
             </Button>
           </div>
