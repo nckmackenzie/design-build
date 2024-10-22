@@ -111,7 +111,7 @@ export const SERVICES = [
   },
   {
     imagePath: '/home/material_sourcing_supply.jpg',
-    title: 'Material Sourcing & Supply',
+    title: 'Material Sourcing & General Supplies',
     description:
       'Our long-standing relations with reputable suppliers enable us to source premium construction materials at competitive prices. Whether you need raw materials, bespoke fixtures, or high-end finishes, we guarantee quality and reliability.',
     href: '/services#material-sourcing-and-supply',
