@@ -81,13 +81,15 @@ function Herov2() {
                 Your Vision is Our Expertise.
               </Badge>
               <h1 className="text-lg md:text-5xl font-bold text-secondary font-headings">
-                Complete turnkey construction solution.
+                Your Complete Turnkey Solution for Design, Building,
+                Construction &amp; General Supplies
               </h1>
             </div>
             <p className="text-foreground text-base md:text-lg">
-              From design to build to supply, we provide a seamless, end-to-end
-              solution for all your construction needs. Discover how we bring
-              your dream project to life with precision, quality, and ease.
+              From Design to Build to General Supplies – Your Seamless,
+              End-to-End Construction Partner. Experience how we bring your
+              vision to life with precision, quality, and reliability. We’re the
+              backbone of your projects and supplies.
             </p>
           </div>
           <div className="space-x-4">
