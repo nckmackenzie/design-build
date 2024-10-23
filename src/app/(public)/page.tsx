@@ -74,7 +74,7 @@ function Herov2() {
         aria-hidden="true"
       /> */}
       <div className="h-full text-white max-w-prose">
-        <div className="space-y-8 ">
+        <div className="space-y-8 mx-6 md:mx-0">
           <div className="space-y-6">
             <div>
               <Badge variant="default" aria-hidden="true">
@@ -86,13 +86,13 @@ function Herov2() {
               </h1>
             </div>
             <p className="text-foreground text-base md:text-lg">
-              From Design to Build to General Supplies – Your Seamless,
+              From Design to Build to General Supplies &mdash; Your Seamless,
               End-to-End Construction Partner. Experience how we bring your
-              vision to life with precision, quality, and reliability. We’re the
-              backbone of your projects and supplies.
+              vision to life with precision, quality, and reliability.
+              We&apos;re the backbone of your projects and supplies.
             </p>
           </div>
-          <div className="space-x-4">
+          <div className="flex flex-col md:flex-row gap-4">
             <Button size="lg" variant="gore">
               Start your project today
             </Button>
@@ -280,8 +280,10 @@ function Process({ index, title, description }: ProcessProps) {
         index % 2 !== 0 && 'sm:border-r-0'
       )}
     >
-      <div className="flex gap-3">
-        <h2 className="text-7xl font-bold text-secondary/50">0{index}</h2>
+      <div className="flex flex-col md:flex-row gap-y-0.5 md:gap-3">
+        <h2 className="text-3xl md:text-7xl font-bold text-secondary/50">
+          0{index}
+        </h2>
         <h3 className="mt-4 text-lg font-semibold text-primary self-end pb-2 border-b w-full">
           {title}
         </h3>
@@ -335,9 +337,9 @@ function CTA() {
     >
       <SectionHeader
         header="Ready to get started?"
-        descripton="Let’s Talk About Your Next Project - Book an Appointment Now!"
+        descripton="Let's Talk About Your Next Project - Book an Appointment Now!"
         id="cta-heading"
-        descriptionClassName="text-white"
+        descriptionClassName="text-white mx-4 md:mx-0"
       />
       <div className="text-center">
         <Button size="lg" variant="gore">
