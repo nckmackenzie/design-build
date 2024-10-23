@@ -226,7 +226,7 @@ function OurProcess() {
   return (
     <section
       id="our-process"
-      className="pb-12 md:pb-16 pt-8 md:pt-12 mx-4 rounded-xl space-y-6"
+      className="pb-12 md:pb-16 pt-8 md:pt-12  space-y-6 "
       aria-labelledby="our-process-heading"
     >
       <SectionHeader
@@ -234,12 +234,34 @@ function OurProcess() {
         descripton="Comprehensive Solutions for Every Stage of Your Construction Journey."
         id="our-process-heading"
       />
-      {PROCESS.map((process, index) => (
-        <Process key={process.title} {...process} index={index + 1} />
-      ))}
+      <div className="mx-auto grid max-w-6xl grid-cols-1 px-6 md:grid-cols-2">
+        {PROCESS.map((process, index) => (
+          <Process key={process.title} {...process} index={index + 1} />
+        ))}
+      </div>
     </section>
   );
 }
+
+// V1
+// function OurProcess() {
+//   return (
+//     <section
+//       id="our-process"
+//       className="pb-12 md:pb-16 pt-8 md:pt-12 mx-4 rounded-xl space-y-6"
+//       aria-labelledby="our-process-heading"
+//     >
+//       <SectionHeader
+//         header="Step-by-Step Journey"
+//         descripton="Comprehensive Solutions for Every Stage of Your Construction Journey."
+//         id="our-process-heading"
+//       />
+//       {PROCESS.map((process, index) => (
+//         <Process key={process.title} {...process} index={index + 1} />
+//       ))}
+//     </section>
+//   );
+// }
 
 interface ProcessProps {
   imagePath: string;
@@ -249,39 +271,60 @@ interface ProcessProps {
   index: number;
 }
 
-function Process({ description, imagePath, title, index }: ProcessProps) {
+function Process({ index, title, description }: ProcessProps) {
   return (
     <div
       className={cn(
-        'flex flex-col md:flex-row gap-4 md:gap-6 container justify-between',
-        index % 2 === 0 ? 'md:flex-row-reverse' : ''
+        'border border-gray-100 p-8 ',
+        index > 2 && 'sm:border-t-0',
+        index % 2 !== 0 && 'sm:border-r-0'
       )}
     >
-      <div className="space-y-6">
-        <div
-          className="text-7xl font-black font-sans text-gray-100"
-          aria-hidden="true"
-        >
-          0{index}
-        </div>
-        <div className="space-y-1">
-          <h5 className="text-primary text-lg md:text-xl font-semibold">
-            {title}
-          </h5>
-          <p className="text-sm md:text-lg max-w-lg">{description}</p>
-        </div>
+      <div className="flex gap-3">
+        <h2 className="text-7xl font-bold text-secondary/50">0{index}</h2>
+        <h3 className="mt-4 text-lg font-semibold text-primary self-end pb-2 border-b w-full">
+          {title}
+        </h3>
       </div>
-      <Image
-        src={imagePath}
-        alt={title}
-        width={500}
-        height={300}
-        className="size-72 "
-        // layout="responsive"
-      />
+      <p className="mt-4 text-gray-400 text-sm">{description}.</p>
     </div>
   );
 }
+
+// V1
+// function Process({ description, imagePath, title, index }: ProcessProps) {
+//   return (
+//     <div
+//       className={cn(
+//         'flex flex-col md:flex-row gap-4 md:gap-6 container justify-between',
+//         index % 2 === 0 ? 'md:flex-row-reverse' : ''
+//       )}
+//     >
+//       <div className="space-y-6">
+//         <div
+//           className="text-7xl font-black font-sans text-gray-100"
+//           aria-hidden="true"
+//         >
+//           0{index}
+//         </div>
+//         <div className="space-y-1">
+//           <h5 className="text-primary text-lg md:text-xl font-semibold">
+//             {title}
+//           </h5>
+//           <p className="text-sm md:text-lg max-w-lg">{description}</p>
+//         </div>
+//       </div>
+//       <Image
+//         src={imagePath}
+//         alt={title}
+//         width={500}
+//         height={300}
+//         className="size-72 "
+//         // layout="responsive"
+//       />
+//     </div>
+//   );
+// }
 
 function CTA() {
   return (
