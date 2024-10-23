@@ -5,6 +5,7 @@ import Link from 'next/link';
 import NavLink from './_components/layout/nav-link';
 
 import { LEGAL_LINKS, NAV_LINKS, SOCIAL_LINKS } from '@/lib/constants';
+import MobileNav from './_components/layout/mobile-nav';
 
 export default function Layout({ children }: { children: React.ReactNode }) {
   return (
@@ -29,6 +30,7 @@ function Header() {
             className="size-11"
           />
         </Link>
+        <MobileNav />
         <nav className="hidden md:block" aria-label="Main navigation">
           <ul className="flex items-center space-x-8" role="list">
             {NAV_LINKS.map(li => (
