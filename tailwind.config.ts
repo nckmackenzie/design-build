@@ -44,6 +44,7 @@ const config: Config = {
       },
       backgroundImage: {
         'hero-pattern': "url('/home/hero_overlay.jpg')",
+        'about-stats': "url('/about/background.jpg')",
       },
     },
   },
