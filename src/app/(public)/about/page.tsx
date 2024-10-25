@@ -165,7 +165,7 @@ function Faqs() {
   );
 }
 
-export const Faq = () => (
+const Faq = () => (
   <div className="sm:col-span-8">
     <Accordion className="divide-y">
       {QUESTIONS.map((e, i) => {
