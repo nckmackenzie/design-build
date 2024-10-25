@@ -168,3 +168,19 @@ export const PROCESS = [
       '<a href="https://storyset.com/work">Work illustrations by Storyset</a>',
   },
 ];
+
+export const QUESTIONS = [
+  {
+    question: 'Getting Started with Us',
+    answer: `Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries`,
+  },
+  {
+    question: 'Our Process and Services',
+    answer: `Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries`,
+  },
+
+  {
+    question: 'Pricing, Payments, and Policies',
+    answer: `Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries`,
+  },
+];
