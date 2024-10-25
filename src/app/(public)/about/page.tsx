@@ -90,7 +90,7 @@ function OurStory() {
       <div className="flex flex-col sm:flex-row gap-6 sm:gap-12 ">
         <div className="sm:flex-1 space-y-4">
           <p className="text-base leading-relaxed max-w-prose ">
-            <strong>DesignBuildSupplySolutions</strong> was founded in 2022 to
+            <strong>DesignBuildSupplySolutions</strong> was founded in 2020 to
             bridge an existential gap in the construction industry. We
             identified the need for a seamless, all-in-one solution that takes
             clients from concept to completion, eliminating the hassle of
