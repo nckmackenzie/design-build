@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Suspense } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 
@@ -11,7 +11,9 @@ export default function Layout({ children }: { children: React.ReactNode }) {
   return (
     <div className="min-h-screen flex flex-col">
       <Header />
-      <main className="flex-1 font-sans text-foreground">{children}</main>
+      <main className="flex-1 font-sans text-foreground">
+        <Suspense>{children}</Suspense>
+      </main>
       <Footer />
     </div>
   );
