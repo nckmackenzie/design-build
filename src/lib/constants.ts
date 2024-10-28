@@ -4,6 +4,10 @@ import { RiToolsLine } from 'react-icons/ri';
 import { GoShieldCheck } from 'react-icons/go';
 import { MdOutlinePriceCheck } from 'react-icons/md';
 import { TbClock24 } from 'react-icons/tb';
+import { SiMaterialdesign } from 'react-icons/si';
+import { IoConstructOutline } from 'react-icons/io5';
+import { BsBuildings } from 'react-icons/bs';
+import { PiArmchairThin } from 'react-icons/pi';
 
 export const NAV_LINKS = [
   {
@@ -94,6 +98,8 @@ export const SERVICES = [
     description:
       'From concept sketches to detailed architectural plans, we translate your ideas into functional, aesthetically pleasing spaces. Our in-house architects collaborate closely with you to ensure your vision is realized.',
     href: '/services#design-and-architecture',
+    icon: SiMaterialdesign,
+    slug: 'design-and-architecture',
   },
   {
     imagePath: '/home/construction_management.jpg',
@@ -101,6 +107,8 @@ export const SERVICES = [
     description:
       'We handle the entire construction process, coordinating every detail from ground-breaking to finishing touches. Our experienced project managers ensure that timelines, budgets, and quality standards are met.',
     href: '/services#construction-management',
+    icon: BsBuildings,
+    slug: 'construction-management',
   },
   {
     imagePath: '/home/interior_design_installation.jpg',
@@ -108,6 +116,8 @@ export const SERVICES = [
     description:
       'Our interior design team takes care of everything, from concept development and 3D renders to the final installation of fixtures, furniture, and decor. We create spaces that reflect your taste, lifestyle, and functional needs.',
     href: '/services#interior-design-and-installation',
+    icon: PiArmchairThin,
+    slug: 'interior-design-and-installation',
   },
   {
     imagePath: '/home/material_sourcing_supply.jpg',
@@ -115,6 +125,8 @@ export const SERVICES = [
     description:
       'Our long-standing relations with reputable suppliers enable us to source premium construction materials at competitive prices. Whether you need raw materials, bespoke fixtures, or high-end finishes, we guarantee quality and reliability.',
     href: '/services#material-sourcing-and-supply',
+    icon: IoConstructOutline,
+    slug: 'material-sourcing-and-supply',
   },
 ];
 
