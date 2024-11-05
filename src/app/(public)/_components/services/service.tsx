@@ -57,7 +57,7 @@ function Service({ title, icon: Icon, slug, isSelected }: ServiceProps) {
         }
       )}
     >
-      <Icon size={16} />
+      <Icon size={16} aria-hidden="true" className="hidden sm:block" />
       <span>{title}</span>
     </button>
   );
