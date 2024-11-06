@@ -196,3 +196,83 @@ export const QUESTIONS = [
     answer: `Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries`,
   },
 ];
+
+export const SLIDES = [
+  {
+    asset: 'construction_management_1.jpg',
+    alt: 'house under construction',
+    width: 1920,
+    height: 1080,
+    category: 'construction-management',
+  },
+  {
+    asset: 'construction_management_2.jpg',
+    alt: 'house pending exterior finishing',
+    width: 1920,
+    height: 1080,
+    category: 'construction-management',
+  },
+  {
+    asset: '/fabricated_chair_1.jpg',
+    alt: 'fabricated chair',
+    width: 1920,
+    height: 1080,
+    category: 'interior-design-and-installation',
+  },
+  {
+    asset: '/fabricated_chair_2.jpg',
+    alt: 'fabricated chair',
+    width: 1920,
+    height: 1080,
+    category: 'interior-design-and-installation',
+  },
+  {
+    asset: '/fabricated_chair_3.jpg',
+    alt: 'fabricated chair',
+    width: 1920,
+    height: 1080,
+    category: 'interior-design-and-installation',
+  },
+  {
+    asset: 'furniture_supply_1.jpg',
+    alt: 'office chair with a glass table',
+    width: 1920,
+    height: 1080,
+    category: 'material-supply-and-sourcing',
+  },
+  {
+    asset: 'furniture_supply_2.jpg',
+    alt: 'office desk and chair',
+    width: 1920,
+    height: 1080,
+    category: 'material-supply-and-sourcing',
+  },
+  {
+    asset: 'interior_decoration.jpg',
+    alt: 'interior decoration',
+    width: 1920,
+    height: 1080,
+    category: 'interior-design-and-installation',
+  },
+  {
+    asset: 'interior_fittings.jpg',
+    alt: 'interior fitting',
+    width: 1920,
+    height: 1080,
+    category: 'interior-design-and-installation',
+  },
+  {
+    asset: 'paint_work_1.jpg',
+    alt: 'paint work',
+    width: 1920,
+    height: 1080,
+    category: 'interior-design-and-installation',
+  },
+  {
+    asset: 'paint_work_2.jpg',
+    alt: 'paint work',
+    width: 1920,
+    height: 1080,
+    category: 'interior-design-and-installation',
+  },
+];
