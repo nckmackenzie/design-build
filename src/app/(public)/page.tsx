@@ -9,6 +9,7 @@ import SectionHeader from '@/components/section-header';
 import { FEATURES, PROCESS, SERVICES } from '@/lib/constants';
 import { cn } from '@/lib/utils';
 import ProjectCarousel from './_components/home/carousel';
+import Actions from './_components/home/actions';
 
 export default function Home() {
   return (
@@ -92,14 +93,7 @@ function Herov2() {
               We&apos;re the backbone of your projects and supplies.
             </p>
           </div>
-          <div className="flex flex-col md:flex-row gap-4">
-            <Button size="lg" variant="gore">
-              Start your project today
-            </Button>
-            <Button size="lg" variant="outline" className="border-secondary">
-              Get a free consultation
-            </Button>
-          </div>
+          <Actions />
         </div>
       </div>
     </section>
