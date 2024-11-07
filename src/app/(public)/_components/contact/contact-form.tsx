@@ -125,7 +125,11 @@ export default function ContactForm() {
             Message
           </label>
           <div className="grid gap-1">
-            <Textarea placeholder="Your message" {...register('message')} />
+            <Textarea
+              placeholder="Your message"
+              {...register('message')}
+              className="resize-none"
+            />
             {errors.contact?.message && (
               <p className="text-sm text-rose-500 font-medium">
                 {errors.contact.message}
