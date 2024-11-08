@@ -1,86 +1,87 @@
 'use client';
 import React from 'react';
-import clsx from 'clsx';
-import { RowsPhotoAlbum, type Photo } from 'react-photo-album';
-import 'react-photo-album/rows.css';
-
-import Lightbox from 'yet-another-react-lightbox';
-import 'yet-another-react-lightbox/styles.css';
-
-// import optional lightbox plugins
-import Fullscreen from 'yet-another-react-lightbox/plugins/fullscreen';
-import Slideshow from 'yet-another-react-lightbox/plugins/slideshow';
-import Thumbnails from 'yet-another-react-lightbox/plugins/thumbnails';
-import Zoom from 'yet-another-react-lightbox/plugins/zoom';
-import 'yet-another-react-lightbox/plugins/thumbnails.css';
-
-import { SERVICES, SLIDES } from '@/lib/constants';
-import BasicSelect from '@/components/basic-select';
 import { useMediaQuery } from 'usehooks-ts';
-const breakpoints = [1080, 640, 384, 256, 128, 96, 64, 48];
 
-function assetLink(asset: string) {
-  return `/projects/${asset}`;
-}
+import { SERVICES } from '@/lib/constants';
+import { cn } from '@/lib/utils';
 
 export default function Projects() {
   const [selectedService, setSelectedService] = React.useState<string>(
     SERVICES[0].slug
   );
-  const isMobile = useMediaQuery('(max-width: 640px)');
-  const [index, setIndex] = React.useState(-1);
-  const photos = SLIDES.filter(s => s.category === selectedService).map(
-    ({ asset, alt, width, height }) =>
-      ({
-        src: assetLink(asset),
-        alt,
-        width,
-        height,
-        srcSet: breakpoints.map(breakpoint => ({
-          src: assetLink(asset),
-          width: breakpoint,
-          height: Math.round((height / width) * breakpoint),
-        })),
-      } as Photo)
-  );
 
   return (
     <div className="space-y-4 sm:space-y-6">
-      {isMobile && (
-        <BasicSelect
-          options={[...SERVICES.map(s => ({ label: s.title, value: s.slug }))]}
-        />
-      )}
-      <ul className="hidden sm:flex sm:items-center sm:gap-x-6 sm:justify-end">
-        {SERVICES.map(service => (
-          <li
-            className={clsx(
-              'text-base cursor-pointer text-gray-400 transition-all duration-300 hover:text-secondary',
-              {
-                'text-secondary font-medium': service.slug === selectedService,
-              }
-            )}
-            key={service.title}
-            onClick={() => setSelectedService(service.slug)}
-          >
-            {service.title}
-          </li>
-        ))}
-      </ul>
-      <RowsPhotoAlbum
-        photos={photos}
-        targetRowHeight={150}
-        onClick={({ index }) => setIndex(index)}
+      <Services
+        selectedServices={selectedService}
+        onServiceSelect={setSelectedService}
       />
+    </div>
+  );
+}
 
-      <Lightbox
-        slides={photos}
-        open={index >= 0}
-        index={index}
-        close={() => setIndex(-1)}
-        // enable optional lightbox plugins
-        plugins={[Fullscreen, Slideshow, Thumbnails, Zoom]}
-      />
+interface ServicesProps {
+  selectedServices: string;
+  onServiceSelect: React.Dispatch<React.SetStateAction<string>>;
+}
+
+function Services({ onServiceSelect, selectedServices }: ServicesProps) {
+  const isMobile = useMediaQuery('(max-width: 640px)');
+
+  return (
+    <div className="sm:flex sm:justify-center">
+      {isMobile ? (
+        <div className="flex flex-col rounded-lg shadow-sm">
+          {SERVICES.map((service, index) => (
+            <button
+              key={service.slug}
+              onClick={() => onServiceSelect(service.slug)}
+              type="button"
+              className={cn(
+                'px-4 py-2 inline-flex items-center gap-x-2  text-sm font-medium focus:z-10 border border-gray-200 bg-white text-gray-900 shadow-sm hover:bg-gray-100  focus:outline-none focus:bg-primary  focus:ring-2 focus:ring-primary focus:text-primary',
+                {
+                  'rounded-t-md': index === 0,
+                  '-mt-px': index !== 0,
+                  'rounded-b-md': index === SERVICES.length - 1,
+                  'bg-primary text-white focus:text-white':
+                    service.slug === selectedServices,
+                }
+              )}
+            >
+              {service.title}
+            </button>
+          ))}
+        </div>
+      ) : (
+        <div
+          className="flex flex-col sm:inline-flex sm:flex-row rounded-md shadow-sm"
+          role="group"
+        >
+          {SERVICES.map((service, index) => {
+            return (
+              <button
+                key={service.title}
+                type="button"
+                onClick={() => onServiceSelect(service.slug)}
+                className={cn(
+                  'flex gap-2 items-center px-4 py-2 text-sm font-medium text-gray-900 bg-white border-gray-200 transition-all hover:bg-gray-100 hover:text-primary focus:z-10 focus:ring-2 focus:ring-primary focus:text-primary ',
+                  {
+                    'border rounded-s-lg': index === 0,
+                    'border-t border-b border-r':
+                      index !== 0 && index !== SERVICES.length - 1,
+                    'border border-l-0 rounded-e-lg':
+                      index === SERVICES.length - 1,
+                    'bg-primary text-secondary focus:text-secondary':
+                      service.slug === selectedServices,
+                  }
+                )}
+              >
+                {service.title}
+              </button>
+            );
+          })}
+        </div>
+      )}
     </div>
   );
 }
