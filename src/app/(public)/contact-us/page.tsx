@@ -11,7 +11,7 @@ export const metadata: Metadata = {
 export default function ContactUsPage() {
   return (
     <section
-      className="pb-12 md:pb-16 pt-8 md:pt-12 mx-4 rounded-3xl space-y-6 container"
+      className="pb-12 md:pb-16 pt-8 md:pt-12 space-y-6 container"
       aria-labelledby="contact-us"
     >
       <SectionHeader
