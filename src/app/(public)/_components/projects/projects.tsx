@@ -28,7 +28,7 @@ export default function Projects() {
           />
         ))}
       </div>
-      <div className="flex flex-col gap-4 items-center justify-center py-6 md:py-12">
+      <div className="flex flex-col gap-4 items-center justify-center py-6 md:py-12 border-b">
         <h4 className="text-3xl md:text-6xl font-bold text-primary">
           Start a project ?
         </h4>
