@@ -197,6 +197,21 @@ export const QUESTIONS = [
   },
 ];
 
+export const PROJECTS = [
+  {
+    projectName: 'Project 1',
+    projectDescription:
+      'Lorem Ipsum has been the industry standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries',
+    image: '/projects/construction_management_1.jpg',
+  },
+  {
+    projectName: 'Project 2',
+    projectDescription:
+      'Lorem Ipsum has been the industry standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries',
+    image: '/projects/construction_management_2.jpg',
+  },
+];
+
 export const SLIDES = [
   {
     asset: 'construction_management_1.jpg',
