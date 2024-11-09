@@ -2,8 +2,10 @@
 import React from 'react';
 import { useMediaQuery } from 'usehooks-ts';
 
-import { SERVICES } from '@/lib/constants';
+import { PROJECTS, SERVICES } from '@/lib/constants';
 import { cn } from '@/lib/utils';
+import Image from 'next/image';
+import { Button } from '@/components/button';
 
 export default function Projects() {
   const [selectedService, setSelectedService] = React.useState<string>(
@@ -16,6 +18,28 @@ export default function Projects() {
         selectedServices={selectedService}
         onServiceSelect={setSelectedService}
       />
+      <div>
+        {PROJECTS.map((project, index) => (
+          <Project
+            key={project.projectName}
+            {...project}
+            isFirst={index === 0}
+          />
+        ))}
+      </div>
+      <div className="flex flex-col gap-4 items-center justify-center py-6 md:py-12">
+        <h4 className="text-3xl md:text-6xl font-bold text-primary">
+          Start a project ?
+        </h4>
+        <p className="text-sm text-gray-500 max-w-prose">
+          Embark on your project journey with us. We provide comprehensive
+          solutions tailored to your needs. Lets bring your vision to life
+          together.
+        </p>
+        <Button size="lg" variant="secondary">
+          Contact Us
+        </Button>
+      </div>
     </div>
   );
 }
@@ -82,6 +106,40 @@ function Services({ onServiceSelect, selectedServices }: ServicesProps) {
           })}
         </div>
       )}
+    </div>
+  );
+}
+
+interface ProjectProps {
+  projectName: string;
+  projectDescription: string;
+  image: string;
+  isFirst: boolean;
+}
+
+function Project({
+  image,
+  projectDescription,
+  projectName,
+  isFirst,
+}: ProjectProps) {
+  return (
+    <div
+      className={cn('grid sm:grid-cols-3 gap-y-4 gap-x-6 py-4 border-b', {
+        'border-t': isFirst,
+      })}
+    >
+      <h3 className="text-base sm:text-lg lg:text-xl font-semibold text-primary mb-4">
+        {projectName}
+      </h3>
+      <p className="text-sm sm:text-base text-gray-500">{projectDescription}</p>
+      <Image
+        src={image}
+        alt={projectName}
+        width={1920}
+        height={1080}
+        objectFit="cover"
+      />
     </div>
   );
 }
