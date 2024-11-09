@@ -6,6 +6,7 @@ import { PROJECTS, SERVICES } from '@/lib/constants';
 import { cn } from '@/lib/utils';
 import Image from 'next/image';
 import { Button } from '@/components/button';
+import Link from 'next/link';
 
 export default function Projects() {
   const [selectedService, setSelectedService] = React.useState<string>(
@@ -36,8 +37,8 @@ export default function Projects() {
           solutions tailored to your needs. Lets bring your vision to life
           together.
         </p>
-        <Button size="lg" variant="secondary">
-          Contact Us
+        <Button size="lg" variant="secondary" asChild>
+          <Link href="/contact">Contact Us</Link>
         </Button>
       </div>
     </div>
