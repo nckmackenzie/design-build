@@ -184,7 +184,11 @@ export const PROCESS = [
 export const QUESTIONS = [
   {
     question: 'Getting Started with Us',
-    answer: `Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries`,
+    answer: `Starting your journey with us simple and seamless. Whether you need full-scale construction, custom
+interiors, or quality material supply, we’re here to bring your vision to life. Begin by reaching out
+through our contact form, phone, or email. Our team will arrange an initial consultation to understand
+your project’s needs, goals, and budget. From there, we’ll tailor a solution to fit your requirements and
+start developing a clear roadmap for your project’s success. Let’s build something exceptional together.`,
   },
   {
     question: 'Our Process and Services',
@@ -193,7 +197,11 @@ export const QUESTIONS = [
 
   {
     question: 'Pricing, Payments, and Policies',
-    answer: `Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries`,
+    answer: `We believe in transparency and fairness in every aspect of our pricing. Our rates are clear and
+straightforward—no hidden fees, unexpected charges, or last-minute surprises. Before beginning any
+project, we provide a comprehensive estimate, ensuring you understand every cost component.For your convenience, we offer flexible payment options tailored to your project’s timeline. We aim to
+create trust through clarity, so you can focus on the excitement of seeing your project come to life
+without worrying about costs.`,
   },
 ];
 
