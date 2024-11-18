@@ -1,12 +1,12 @@
 'use client';
 import React from 'react';
+import Link from 'next/link';
+import Image from 'next/image';
 import { useMediaQuery } from 'usehooks-ts';
 
 import { PROJECTS, SERVICES } from '@/lib/constants';
 import { cn } from '@/lib/utils';
-import Image from 'next/image';
 import { Button } from '@/components/button';
-import Link from 'next/link';
 
 export default function Projects() {
   const [selectedService, setSelectedService] = React.useState<string>(
@@ -20,13 +20,15 @@ export default function Projects() {
         onServiceSelect={setSelectedService}
       />
       <div>
-        {PROJECTS.map((project, index) => (
-          <Project
-            key={project.projectName}
-            {...project}
-            isFirst={index === 0}
-          />
-        ))}
+        {PROJECTS.filter(project => project.category === selectedService).map(
+          (project, index) => (
+            <Project
+              key={project.projectName}
+              {...project}
+              isFirst={index === 0}
+            />
+          )
+        )}
       </div>
       <div className="flex flex-col gap-4 items-center justify-center py-6 md:py-12 border-b">
         <h4 className="text-3xl md:text-6xl font-bold text-primary">
