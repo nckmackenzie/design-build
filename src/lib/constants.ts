@@ -207,16 +207,60 @@ without worrying about costs.`,
 
 export const PROJECTS = [
   {
-    projectName: 'Project 1',
+    projectName: 'Bar stools - Zahips Lounge ',
+    category: 'general-supply',
     projectDescription:
-      'Lorem Ipsum has been the industry standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries',
+      "When Zahips Lounge approached us,they envisioned unique, high-end seating that would enhance their lounge's modern and sophisticated atmosphere. Each stool was built with comfort and durability in mind featuring ergonomic seats and sturdy bases.",
+    image: '/projects/fabricated_chair_3.jpg',
+  },
+  {
+    projectName: 'Office Furniture Supply',
+    category: 'general-supply',
+    projectDescription:
+      'Prestige Business Solutions required a complete office furniture solution for their newly expanded headquarters. We supplied and installed ergonomic office chairs, modular desks, collaborative workstations and storage cabinets.',
+    image: '/projects/furniture_supply_2.jpg',
+  },
+  {
+    projectName: 'Nakuru Mansion',
+    category: 'construction-management',
+    projectDescription:
+      "With our Design, BUild and supply approach, we covered every aspect of this project. Our inhouse architects drew the architectural designs and created custom blueprints that reflected the client's vision. Then we began the actual construction.",
     image: '/projects/construction_management_1.jpg',
   },
   {
-    projectName: 'Project 2',
+    projectName: 'Bomet 3 bedroom House',
+    category: 'construction-management',
     projectDescription:
-      'Lorem Ipsum has been the industry standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries',
+      "Our team was commissioned to design and construct a contemporary three-storey home that blends modern architecture with sustainable design principles. Starting with initial architectural concepts and 3D renders, we created a fully customized blueprint that met the client's specifications.",
     image: '/projects/construction_management_2.jpg',
+  },
+  {
+    projectName: 'Nakuru Salon',
+    category: 'design-and-architecture',
+    projectDescription:
+      "Nakuru Salon sought a fresh, modern design that would maximize the salon's flow and create a luxurious, inviting environment for clients. Our architectural team crafted detailed drawings and floor plans that integrated styling stations, wash areas and a reception lounge, all arranged for optimal functionality and client comfort.",
+    image: '/projects/nakuru_salon.jpg',
+  },
+  {
+    projectName: 'Lucky Mart supermarket ',
+    category: 'design-and-architecture',
+    projectDescription:
+      'Our architects provided comprehensive floor plans, from layout planning for aisles and product sections to efficient loading zones and storage spaces. The design emphasizes ease of navigation with strategically placed shelves and signage zones ensuring customers have a smooth and enjoyable shopping experience.',
+    image: '/projects/luckymart.jpg',
+  },
+  {
+    projectName: 'Custom Luxurious Paintwork',
+    category: 'interior-design-and-installation',
+    projectDescription:
+      'For a luxury residence in Nakuru, we were commissioned to create an exquisite feature wall that would serve as a focal point in the living area. The project involved multiple layers of custom wall texturing and a metallic finish that reflects light beautifully adding depth and sophistication to the space.',
+    image: '/projects/interior_decoration.jpg',
+  },
+  {
+    projectName: 'Stilo Barber & Spa - Nakuru',
+    category: 'interior-design-and-installation',
+    projectDescription:
+      "With an open floor plan, the salon's design features a minimalistic yet chic interior using natural light to enhance the space and adding well-placed lighting fixtures for ambience. Custom cabinetry was designed to store equipment discreetly, and each styling station was uniquely tailored to create an intimate experience for each client.",
+    image: '/projects/barbershop_interior.jpg',
   },
 ];
 
