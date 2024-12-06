@@ -4,6 +4,7 @@ import React from 'react';
 import { Button } from '@/components/button';
 import { Dialog, DialogContent, DialogTitle } from '@/components/dialog';
 import ContactForm from '../contact/contact-form';
+import Link from 'next/link';
 
 export default function Actions() {
   const [isOpen, setIsOpen] = React.useState(false);
@@ -14,8 +15,13 @@ export default function Actions() {
   return (
     <>
       <div className="flex flex-col md:flex-row gap-4">
-        <Button size="lg" variant="gore">
-          Start your project today
+        <Button size="lg" variant="gore" asChild>
+          <Link
+            href="https://api.whatsapp.com/send/?phone=254116308453"
+            target="_blank"
+          >
+            Start your project today
+          </Link>
         </Button>
         <Button
           size="lg"
