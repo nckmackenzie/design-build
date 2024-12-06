@@ -1,14 +1,14 @@
 import Link from 'next/link';
 import { FaWhatsapp } from 'react-icons/fa';
 // import { FaXTwitter } from 'react-icons/fa6';
-import { MdAlternateEmail, MdCall, MdOutlineLocationOn } from 'react-icons/md';
+import { MdAlternateEmail, MdCall } from 'react-icons/md';
 
 export default function ContactUsOther() {
   return (
     <div className="sm:col-span-4 space-y-4">
       <Messages />
       <Call />
-      <VisitUs />
+      {/* <VisitUs /> */}
     </div>
   );
 }
@@ -85,31 +85,31 @@ function Call() {
   );
 }
 
-function VisitUs() {
-  return (
-    <>
-      <header className="space-y-0.5">
-        <h4 className="text-base sm:text-lg font-semibold text-primary">
-          Visit us
-        </h4>
-        <p className="text-gray-400 text-sm">
-          Come chat with us in person at our office.
-        </p>
-      </header>
-      <div className="space-y-2">
-        <div className="space-x-2">
-          <Link href="/" className="text-sm inline-flex gap-2 items-center">
-            <MdOutlineLocationOn
-              aria-hidden
-              size={16}
-              className="text-primary"
-            />
-            <span className="text-slate-900 font-medium transition-all hover:text-blue-600 hover:undeline">
-              Office address here
-            </span>
-          </Link>
-        </div>
-      </div>
-    </>
-  );
-}
+// function VisitUs() {
+//   return (
+//     <>
+//       <header className="space-y-0.5">
+//         <h4 className="text-base sm:text-lg font-semibold text-primary">
+//           Visit us
+//         </h4>
+//         <p className="text-gray-400 text-sm">
+//           Come chat with us in person at our office.
+//         </p>
+//       </header>
+//       <div className="space-y-2">
+//         <div className="space-x-2">
+//           <Link href="/" className="text-sm inline-flex gap-2 items-center">
+//             <MdOutlineLocationOn
+//               aria-hidden
+//               size={16}
+//               className="text-primary"
+//             />
+//             <span className="text-slate-900 font-medium transition-all hover:text-blue-600 hover:undeline">
+//               Office address here
+//             </span>
+//           </Link>
+//         </div>
+//       </div>
+//     </>
+//   );
+// }
