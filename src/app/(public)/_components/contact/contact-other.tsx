@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import { FaWhatsapp } from 'react-icons/fa';
-import { FaXTwitter } from 'react-icons/fa6';
+// import { FaXTwitter } from 'react-icons/fa6';
 import { MdAlternateEmail, MdCall, MdOutlineLocationOn } from 'react-icons/md';
 
 export default function ContactUsOther() {
@@ -24,7 +24,11 @@ function Messages() {
       </header>
       <div className="space-y-2">
         <div className="space-x-2">
-          <Link href="/" className="text-sm inline-flex gap-2 items-center">
+          <Link
+            target="_blank"
+            href="https://api.whatsapp.com/send/?phone=254116308453"
+            className="text-sm inline-flex gap-2 items-center"
+          >
             <FaWhatsapp aria-hidden size={16} className="text-primary" />
             <span className="text-slate-900 font-medium transition-all hover:text-blue-600 hover:undeline">
               Chat With Us
@@ -32,21 +36,24 @@ function Messages() {
           </Link>
         </div>
         <div className="space-x-2">
-          <Link href="/" className="text-sm inline-flex gap-2 items-center">
+          <Link
+            href="mailto:info@designbuildsupplysolutions.com"
+            className="text-sm inline-flex gap-2 items-center"
+          >
             <MdAlternateEmail aria-hidden size={16} className="text-primary" />
             <span className="text-slate-900 font-medium transition-all hover:text-blue-600 hover:undeline">
               Shoot us an email
             </span>
           </Link>
         </div>
-        <div className="space-x-2">
+        {/* <div className="space-x-2">
           <Link href="/" className="text-sm inline-flex gap-2 items-center">
             <FaXTwitter aria-hidden size={16} className="text-primary" />
             <span className="text-slate-900 font-medium transition-all hover:text-blue-600 hover:undeline">
               Message us on X
             </span>
           </Link>
-        </div>
+        </div> */}
       </div>
     </>
   );
@@ -63,10 +70,13 @@ function Call() {
       </header>
       <div className="space-y-2">
         <div className="space-x-2">
-          <Link href="/" className="text-sm inline-flex gap-2 items-center">
+          <Link
+            href="tel:+254116308453"
+            className="text-sm inline-flex gap-2 items-center"
+          >
             <MdCall aria-hidden size={16} className="text-primary" />
             <span className="text-slate-900 font-medium transition-all hover:text-blue-600 hover:undeline">
-              0722 000 000
+              0116 308 453
             </span>
           </Link>
         </div>
