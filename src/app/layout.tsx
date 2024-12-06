@@ -70,6 +70,12 @@ export const metadata: Metadata = {
     template: '%s | Design Build',
   },
   description: 'Design. Build. Supply. Solutions for Life',
+  icons: [
+    {
+      url: '/logos/favicon.svg',
+      href: '/logos/favicon.svg',
+    },
+  ],
 };
 
 export default function RootLayout({
