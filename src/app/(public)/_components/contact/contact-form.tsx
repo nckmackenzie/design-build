@@ -1,48 +1,27 @@
 'use client';
-import React from 'react';
+import React, { useTransition } from 'react';
 import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
-import { z } from 'zod';
 import clsx from 'clsx';
+import toast from 'react-hot-toast';
+
 import { Input } from '@/components/input';
 import { Textarea } from '@/components/textarea';
 import { Button } from '@/components/button';
 
-const formSchema = z.object({
-  firstName: z
-    .string({ required_error: 'First name is required' })
-    .trim()
-    .min(1, 'First name is required')
-    .toLowerCase(),
-  lastName: z
-    .string({ required_error: 'Last name is required' })
-    .trim()
-    .min(1, 'Last name is required')
-    .toLowerCase(),
-  email: z
-    .string({ required_error: 'Email is required' })
-    .trim()
-    .min(1, 'Email is required')
-    .email('Invalid email')
-    .toLowerCase(),
-  contact: z
-    .string({ required_error: 'Contact is required' })
-    .trim()
-    .min(1, 'Contact is required')
-    .max(10, 'Invalid contact'),
-  message: z
-    .string({ required_error: 'Message is required' })
-    .trim()
-    .min(1, 'Message is required'),
-});
+import { formSchema, FormValues } from '../../_utils/schema';
+import { homeContactAction } from '../../_actions';
 
-type FormValues = z.infer<typeof formSchema>;
-
-export default function ContactForm() {
+export default function ContactForm({
+  onHandleClose,
+}: {
+  onHandleClose: () => void;
+}) {
+  const [isPending, startTransition] = useTransition();
   const {
     register,
     handleSubmit,
-    formState: { errors, isSubmitting },
+    formState: { errors },
   } = useForm<FormValues>({
     defaultValues: {
       contact: '',
@@ -55,7 +34,16 @@ export default function ContactForm() {
   });
 
   function onSubmit(values: FormValues) {
-    console.log(values);
+    startTransition(() => {
+      homeContactAction(values).then(data => {
+        if (data?.error) {
+          toast.error(data.error);
+          return;
+        }
+        toast.success('Message sent successfully');
+        onHandleClose();
+      });
+    });
   }
 
   return (
@@ -69,7 +57,11 @@ export default function ContactForm() {
             First Name
           </label>
           <div className="grid gap-1">
-            <Input placeholder="First Name" {...register('firstName')} />
+            <Input
+              placeholder="First Name"
+              {...register('firstName')}
+              disabled={isPending}
+            />
             {errors.firstName?.message && (
               <p className="text-sm text-rose-500 font-medium">
                 {errors.firstName.message}
@@ -82,7 +74,11 @@ export default function ContactForm() {
             Last Name
           </label>
           <div className="grid gap-1">
-            <Input placeholder="Last Name" {...register('lastName')} />
+            <Input
+              placeholder="Last Name"
+              {...register('lastName')}
+              disabled={isPending}
+            />
             {errors.lastName?.message && (
               <p className="text-sm text-rose-500 font-medium">
                 {errors.lastName.message}
@@ -95,7 +91,11 @@ export default function ContactForm() {
             Email
           </label>
           <div className="grid gap-1">
-            <Input placeholder="smith@example.com" {...register('email')} />
+            <Input
+              placeholder="smith@example.com"
+              {...register('email')}
+              disabled={isPending}
+            />
             {errors.email?.message && (
               <p className="text-sm text-rose-500 font-medium">
                 {errors.email.message}
@@ -112,6 +112,7 @@ export default function ContactForm() {
               placeholder="0700000000"
               {...register('contact')}
               maxLength={10}
+              disabled={isPending}
             />
             {errors.contact?.message && (
               <p className="text-sm text-rose-500 font-medium">
@@ -129,6 +130,7 @@ export default function ContactForm() {
               placeholder="Your message"
               {...register('message')}
               className="resize-none"
+              disabled={isPending}
             />
             {errors.contact?.message && (
               <p className="text-sm text-rose-500 font-medium">
@@ -141,7 +143,7 @@ export default function ContactForm() {
           <Button
             type="submit"
             className="w-full sm:w-max"
-            disabled={isSubmitting}
+            disabled={isPending}
           >
             Send Message
           </Button>
