@@ -1,10 +1,10 @@
 'use client';
 import React from 'react';
+import Link from 'next/link';
 
 import { Button } from '@/components/button';
 import { Dialog, DialogContent, DialogTitle } from '@/components/dialog';
 import ContactForm from '../contact/contact-form';
-import Link from 'next/link';
 
 export default function Actions() {
   const [isOpen, setIsOpen] = React.useState(false);
@@ -47,7 +47,7 @@ function Consultation({ isOpen, onHandleClose }: ConsultationProps) {
     <Dialog open={isOpen} onOpenChange={onHandleClose}>
       <DialogContent className="bg-white max-w-2xl">
         <DialogTitle>Get a free consultation</DialogTitle>
-        <ContactForm />
+        <ContactForm onHandleClose={onHandleClose} />
       </DialogContent>
     </Dialog>
   );
