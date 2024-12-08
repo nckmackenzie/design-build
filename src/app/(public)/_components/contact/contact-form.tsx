@@ -15,12 +15,13 @@ import { homeContactAction } from '../../_actions';
 export default function ContactForm({
   onHandleClose,
 }: {
-  onHandleClose: () => void;
+  onHandleClose?: () => void;
 }) {
   const [isPending, startTransition] = useTransition();
   const {
     register,
     handleSubmit,
+    reset,
     formState: { errors },
   } = useForm<FormValues>({
     defaultValues: {
@@ -41,7 +42,10 @@ export default function ContactForm({
           return;
         }
         toast.success('Message sent successfully');
-        onHandleClose();
+        reset();
+        if (onHandleClose) {
+          onHandleClose();
+        }
       });
     });
   }
